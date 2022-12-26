@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             showUnselectedLabels: true,
             onTap: (final int index) => setState(() => _selectedIndex = index),
             items: _bottomNavigationItems
-                .map((item) =>
+                .map((final BottomNavigationItem item) =>
                     BottomNavigationBarItem(icon: item.icon, label: item.label))
                 .toList()),
         body: _bottomNavigationItems[_selectedIndex].page,

@@ -17,7 +17,7 @@ class TimerTaskListPage extends StatelessWidget {
             final TimerTask timerTask, final int index) =>
         Navigator.push(
             context,
-            PageRouteBuilder(
+            PageRouteBuilder<Widget>(
                 transitionDuration: const Duration(seconds: 1),
                 pageBuilder: (final _, final __, final ___) =>
                     TimerTaskDetailPage(timerTask: timerTask, index: index)));

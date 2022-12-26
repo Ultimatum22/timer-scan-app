@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timer_scan_app/cubits/timer_tasks/timer_tasks_cubit.dart';
 import 'package:timer_scan_app/data/timer_tasks_repository.dart';
 import 'package:timer_scan_app/pages/home_page.dart';
-import 'package:timer_scan_app/pages/timer_task/timer_task_list_page.dart';
 
 void main() => runApp(const MyApp());
 

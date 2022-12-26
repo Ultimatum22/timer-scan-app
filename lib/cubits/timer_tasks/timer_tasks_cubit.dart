@@ -7,7 +7,6 @@ import 'package:timer_scan_app/data/timer_tasks_repository.dart';
 part 'timer_tasks_state.dart';
 
 class TimerTasksCubit extends Cubit<TimerTasksState> {
-
   final TimerTasksRepository timerTasksRepository;
 
   TimerTasksCubit({required this.timerTasksRepository})

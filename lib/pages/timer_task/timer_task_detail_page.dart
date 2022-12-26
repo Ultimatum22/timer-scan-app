@@ -8,7 +8,7 @@ class TimerTaskDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(),
+        appBar: AppBar(),
         body: const Text('TimerTaskDetailPage'),
       );
 }

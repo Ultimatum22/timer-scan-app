@@ -1,7 +1,5 @@
 import 'dart:math';
 
-import 'package:flutter/animation.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vector_math/vector_math.dart' as Vector;
@@ -12,7 +10,7 @@ class WaveAnimationWidget extends StatefulWidget {
   final int yOffset;
   final Color color;
 
-  WaveAnimationWidget(
+  const WaveAnimationWidget(
       {Key? key,
       required this.size,
       this.xOffset = 0,
@@ -29,14 +27,14 @@ class WaveAnimationWidget extends StatefulWidget {
 class _WaveAnimationWidgetState extends State<WaveAnimationWidget>
     with TickerProviderStateMixin {
   late AnimationController animationController;
-  List<Offset> animList1 = [];
+  List<Offset> animList1 = <Offset>[];
 
   @override
   void initState() {
     super.initState();
 
-    animationController = AnimationController(
-        vsync: this, duration: Duration(seconds: 2));
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
     animationController.addListener(() {
       animList1.clear();
@@ -71,7 +69,7 @@ class _WaveAnimationWidgetState extends State<WaveAnimationWidget>
           parent: animationController,
           curve: Curves.easeInOut,
         ),
-        builder: (context, child) => ClipPath(
+        builder: (BuildContext context, Widget? child) => ClipPath(
           clipper: WaveClipper(animationController.value, animList1),
           child: Container(
             width: widget.size.width,
@@ -87,13 +85,13 @@ class _WaveAnimationWidgetState extends State<WaveAnimationWidget>
 class WaveClipper extends CustomClipper<Path> {
   final double animation;
 
-  List<Offset> waveList1 = [];
+  List<Offset> waveList1 = <Offset>[];
 
   WaveClipper(this.animation, this.waveList1);
 
   @override
   Path getClip(Size size) {
-    Path path = Path();
+    final Path path = Path();
 
     path.addPolygon(waveList1, false);
 
